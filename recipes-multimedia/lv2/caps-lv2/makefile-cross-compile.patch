@@ -1,0 +1,41 @@
+diff --git a/Makefile b/Makefile
+index 282c164..81c321a 100644
+--- a/Makefile
++++ b/Makefile
+@@ -3,7 +3,7 @@ VERSION = 0.9.24
+ PREFIX = /usr
+ DESTDIR = 
+ 
+-CC = g++
++#CC = g++
+ 
+ OPTS = -O3 -ffast-math -funroll-loops -Wall -fPIC -DPIC
+ #OPTS = -g -DDEBUG 
+@@ -16,8 +16,8 @@ STRIP = strip
+ 
+ -include defines.make
+ 
+-CFLAGS += $(OPTS) $(_CFLAGS)
+-LDFLAGS += $(_LDFLAGS) $(CFLAGS)
++override CFLAGS += $(OPTS) $(_CFLAGS)
++override LDFLAGS += $(_LDFLAGS) $(CFLAGS)
+ 
+ PLUG = caps
+ 
+@@ -73,14 +73,14 @@ tags: $(SOURCES) $(HEADERS)
+ 	@-if [ -x /usr/bin/ctags ]; then ctags $(SOURCES) $(HEADERS) >/dev/null 2>&1 ; fi
+ 
+ install: all install-lv2
+-	@$(STRIP) $(PLUG).so > /dev/null
++	#@$(STRIP) $(PLUG).so > /dev/null
+ 	install -d $(DESTDIR)$(DEST)
+ 	install -m 644 $(PLUG).so $(DESTDIR)$(DEST)
+ 	install -d $(DESTDIR)$(RDFDEST)
+ 	install -m 644 $(PLUG).rdf $(DESTDIR)$(RDFDEST)
+ 
+ install-lv2: all
+-	@$(STRIP) $(PLUG).so > /dev/null
++	#@$(STRIP) $(PLUG).so > /dev/null
+ 	install -d $(DESTDIR)$(LV2DEST)
+ 	install -m 644 $(PLUG).so $(DESTDIR)$(LV2DEST)
+ 	install -m 644 $(TTL) $(DESTDIR)$(LV2DEST)
