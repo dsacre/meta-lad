@@ -1,0 +1,16 @@
+Use mkdir -p instead of mkdirhier to avoid build-dep on xutils-dev
+--- a/src/makefile
++++ b/src/makefile
+@@ -64,9 +64,9 @@
+ 	@echo Test complete.
+ 
+ install:	targets
+-	-mkdirhier $(INSTALL_PLUGINS_DIR)
+-	-mkdirhier $(INSTALL_INCLUDE_DIR)
+-	-mkdirhier $(INSTALL_BINARY_DIR)
++	-mkdir -p $(INSTALL_PLUGINS_DIR)
++	-mkdir -p $(INSTALL_INCLUDE_DIR)
++	-mkdir -p $(INSTALL_BINARY_DIR)
+ 	cp ../plugins/* $(INSTALL_PLUGINS_DIR)
+ 	cp ladspa.h $(INSTALL_INCLUDE_DIR)
+ 	cp ../bin/* $(INSTALL_BINARY_DIR)

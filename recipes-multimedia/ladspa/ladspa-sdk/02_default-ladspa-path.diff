@@ -1,0 +1,26 @@
+Use a default ladspa path instead of failing when LADSPA_PATH is undefined
+--- a/src/load.c
++++ b/src/load.c
+@@ -54,6 +54,8 @@
+        to search. */
+ 
+     pcLADSPAPath = getenv("LADSPA_PATH");
++    if (!pcLADSPAPath)
++      pcLADSPAPath = "/usr/lib/ladspa";
+     
+     if (pcLADSPAPath) {
+ 
+--- a/src/search.c
++++ b/src/search.c
+@@ -99,10 +99,10 @@
+ 
+   pcLADSPAPath = getenv("LADSPA_PATH");
+   if (!pcLADSPAPath) {
++    pcLADSPAPath = "/usr/lib/ladspa/";
+     fprintf(stderr,
+ 	    "Warning: You do not have a LADSPA_PATH "
+ 	    "environment variable set.\n");
+-    return;
+   }
+   
+   pcStart = pcLADSPAPath;
