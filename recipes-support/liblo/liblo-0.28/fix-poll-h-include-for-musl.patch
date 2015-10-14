@@ -1,0 +1,13 @@
+diff --git a/src/server.c b/src/server.c
+index 3d01e88..411fa3b 100644
+--- a/src/server.c
++++ b/src/server.c
+@@ -48,7 +48,7 @@
+ #include <netdb.h>
+ #include <sys/socket.h>
+ #ifdef HAVE_POLL
+-#include <sys/poll.h>
++#include <poll.h>
+ #endif
+ #include <sys/un.h>
+ #include <arpa/inet.h>
