@@ -7,8 +7,11 @@ DEPENDS = "lv2"
 PV = "git${SRCPV}"
 
 SRCREV = "b7d67f94ff7115e947b82bac76b9e5faddbdca76"
-SRC_URI = "git://github.com/moddevices/caps-lv2.git \
-           file://makefile-cross-compile.patch"
+SRC_URI = "\
+    git://github.com/moddevices/caps-lv2.git \
+    file://makefile-cross-compile.patch \
+    file://fix-stdint-types-with-musl.patch \
+"
 
 S = "${WORKDIR}/git"
 

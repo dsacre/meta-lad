@@ -1,0 +1,35 @@
+diff --git a/basics.h b/basics.h
+index 643d96e..34e5f63 100644
+--- a/basics.h
++++ b/basics.h
+@@ -39,6 +39,7 @@
+ #define _ISOC9X_SOURCE 1
+ 
+ #include <stdlib.h>
++#include <stdint.h>
+ #include <string.h>
+ 
+ #include <math.h>
+@@ -49,14 +50,14 @@
+ 
+ #include "ladspa.h"
+ 
+-typedef __int8_t			int8;
+-typedef __uint8_t			uint8;
+-typedef __int16_t			int16;
+-typedef __uint16_t		uint16;
+-typedef __int32_t			int32;
+-typedef __uint32_t		uint32;
+-typedef __int64_t			int64;
+-typedef __uint64_t		uint64;
++typedef int8_t			int8;
++typedef uint8_t			uint8;
++typedef int16_t			int16;
++typedef uint16_t		uint16;
++typedef int32_t			int32;
++typedef uint32_t		uint32;
++typedef int64_t			int64;
++typedef uint64_t		uint64;
+ 
+ #define MIN_GAIN 1e-6 /* -120 dB */
+ /* smallest non-denormal 32 bit IEEE float is 1.18e-38 */
