@@ -14,3 +14,5 @@ PACKAGES = "${PN}-dev ${PN}-dbg"
 FILES_${PN}-dev += "${bindir}/* ${libdir}/lv2/*.lv2/* ${datadir}/lv2specgen/*"
 FILES_${PN}-dbg += "${libdir}/lv2/*/.debug/*"
 RDEPENDS_${PN}-dev = ""
+
+INSANE_SKIP_${PN}-dev += "dev-elf"
