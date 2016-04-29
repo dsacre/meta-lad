@@ -4,7 +4,7 @@ SECTION = "console/multimedia"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=751419260aa954499f7abaabaa882bbe"
 
-DEPENDS = "alsa-lib jack boost"
+DEPENDS = "alsa-lib jack boost glib-2.0"
 RDEPENDS_${PN} += "python3-decorator"
 
 S = "${WORKDIR}/git"
