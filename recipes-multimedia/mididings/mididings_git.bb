@@ -8,7 +8,7 @@ DEPENDS = "alsa-lib jack boost glib-2.0"
 RDEPENDS_${PN} += "python3-decorator"
 
 S = "${WORKDIR}/git"
-SRCREV = "b2e45015ed9ecab75b1efa92c7d805b00ff3a023"
+SRCREV = "bbec99a8c878a2a7029e78e84fc736e4a68ed5a0"
 SRC_URI = "git://github.com/dsacre/mididings.git"
 PV = "git${SRCPV}"
 
