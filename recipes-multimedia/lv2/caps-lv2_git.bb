@@ -11,6 +11,7 @@ SRC_URI = "\
     git://github.com/moddevices/caps-lv2.git \
     file://makefile-cross-compile.patch \
     file://fix-stdint-types-with-musl.patch \
+    file://fix-gcc6-build.patch \
 "
 
 S = "${WORKDIR}/git"
